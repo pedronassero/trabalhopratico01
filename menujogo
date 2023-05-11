@@ -1,0 +1,252 @@
+#include <stdio.h>
+
+// APRESENTACAO DO JOGO
+void apresentacao() {
+        printf("------------------------\n");
+        printf("*     NOME DO JOGO     *\n");
+        printf("------------------------\n");
+}
+
+int main() {
+        int opcao = 0, existepersonagem = 0;
+
+        while  (opcao != 3) {
+                printf("\n");
+                apresentacao();
+                printf("Escolha uma das opções:\n");
+                printf("* 1 - Criar personagem *\n");
+                printf("* 2 - Iniciar jogo     *\n");
+                printf("* 3 - Sair             *\n");
+
+                scanf("%d", &opcao);
+
+                switch(opcao) {
+                        case 1:
+                                printf("\n");
+                                printf("* Você escolheu criar um personagem *\n\n");
+                                existepersonagem = 1;
+
+                                char nome[20], historia[400];
+                                int raca, alinhamento, profissao, meta, meioemquevive, porte;
+                                int vida = 100;
+
+                                printf("Agora você precisa informar as características do seu personagem:\n");
+                                printf("* Nome: ");
+                                scanf("%s", nome);
+
+                                printf("* Raça (1 - HUMANO, 2 - ANÃO, 3 - ELFO): ");
+                                scanf("%d", &raca);
+
+
+                                if (raca == 1) { // caso a raça seja humano
+                                        printf("* Alinhamento (1- MAL, 2 - NEUTRO, 3 - BOM): ");
+                                        scanf("%d", &alinhamento);
+
+                                        if(alinhamento == 3) { // bom nao pode ser ladino
+                                                printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                scanf("%d", &profissao);
+                                                while (profissao != 1 && profissao != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser bom e ter a profissão de ladino !\n");
+                                                        printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                        scanf("%d", &profissao);
+                                                        continue;
+                                                }
+                                       } else {
+                                                printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                scanf("%d", &profissao);
+                                       }
+
+
+                                       if (alinhamento == 1) { // ser nao pode querer destruir o mal
+                                                printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                scanf("%d", &meta);
+                                                while (meta != 1 && meta != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser mal e ter a meta de destruir o mal !\n");
+                                                        printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                        scanf("%d", &meta);
+                                                        continue;
+                                               }
+                                       } else {
+                                                printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                scanf("%d", &meta);
+                                       }
+
+                                        if (profissao == 3) { // ladino nao pode ser tribal
+                                                printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                scanf("%d", &meioemquevive);
+                                                while (meioemquevive != 1 && meioemquevive != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser ladino e viver no meio tribal !\n");
+                                                        printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                        scanf("%d", &meioemquevive);
+                                                      continue;
+                                                }
+                                        } else {
+                                                printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                scanf("%d", &meioemquevive);
+                                        }
+
+
+                                        printf("* Porte (1 - GRANDE, 2 - MÉDIO, 3 - PEQUENO): ");
+                                        scanf("%d", &porte);
+
+                                        printf("* História Prévia: "); // !escanear a historia do personagem
+                                        scanf("%s", historia);
+                                        printf("\n\n");
+                                        continue;
+                                }
+
+
+
+                                if (raca == 2) { // caso a raça seja anão
+                                        printf("* Alinhamento (1- MAL, 2 - NEUTRO, 3 - BOM): ");
+                                        scanf("%d", &alinhamento);
+
+                                        if(alinhamento == 3) { // bom nao pode ser ladino
+                                                printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                scanf("%d", &profissao);
+                                                while (profissao != 1 && profissao != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser bom e ter a profissão de ladino !\n");
+                                                        printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                        scanf("%d", &profissao);
+                                                        continue;
+                                                }
+                                        } else {
+                                                printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                scanf("%d", &profissao);
+                                        }
+
+
+                                        if (alinhamento == 1) { // ser nao pode querer destruir o mal
+                                                printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                scanf("%d", &meta);
+                                                while (meta != 1 && meta != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser mal e ter a meta de destruir o mal !\n");
+                                                        printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                        scanf("%d", &meta);
+                                                        continue;
+                                                }
+                                        } else {
+                                                printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                scanf("%d", &meta);
+                                        }
+
+                                        if (profissao == 3) { // ladino nao pode ser tribal
+                                                printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                scanf("%d", &meioemquevive);
+                                                while (meioemquevive != 1 && meioemquevive != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser ladino e viver no meio tribal !\n");
+                                                        printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                        scanf("%d", &meioemquevive);
+                                                        continue;
+                                                }
+                                        } else {
+                                                printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                scanf("%d", &meioemquevive);
+                                        }
+
+
+                                        printf("* Porte (1 - GRANDE, 2 - MÉDIO, 3 - PEQUENO): ");
+                                        scanf("%d", &porte);
+                                        while (porte != 2 && porte != 3) { // anao nao pode ser grande
+                                                printf("\n");
+                                                printf("! Seu personagem não pode ser anão e ter um porte grande !\n");
+                                                printf("Porte (1- GRANDE, 2 - MÉDIO, 3 - PEQUENO): ");
+                                                scanf("%d", &porte);
+                                                continue;
+                                        }
+
+                                        printf("* História Prévia: "); // !escanear a historia do personagem
+                                        scanf("%s", historia);
+                                        break;
+                                }
+
+                                if (raca == 3) { // caso a raça seja humano
+                                        printf("* Alinhamento (1- MAL, 2 - NEUTRO, 3 - BOM): ");
+                                        scanf("%d", &alinhamento);
+
+                                        if(alinhamento == 3) { // bom nao pode ser ladino
+                                                printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                scanf("%d", &profissao);
+                                                while (profissao != 1 && profissao != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser bom e ter a profissão de ladino !\n");
+                                                        printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                        scanf("%d", &profissao);
+                                                        continue;
+                                                }
+                                        } else {
+                                                printf("* Profissão (1 - GUERREIRO, 2 - MAGO, 3 - LADINO): ");
+                                                scanf("%d", &profissao);
+                                }
+
+
+                                        if (alinhamento == 1) { // ser nao pode querer destruir o mal
+                                                printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                scanf("%d", &meta);
+                                                while (meta != 1 && meta != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser mal e ter a meta de destruir o mal !\n");
+                                                        printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                        scanf("%d", &meta);
+                                                        continue;
+                                                }
+                                        } else {
+                                                printf("* Meta (1 - GOVERNAR O REINO, 2 - FICAR RICO, 3 - DESTRUIR O MAL): ");
+                                                scanf("%d", &meta);
+                                        }
+
+                                        if (profissao == 3) { // ladino nao pode ser tribal
+                                                printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                scanf("%d", &meioemquevive);
+                                                while (meioemquevive != 1 && meioemquevive != 2) {
+                                                        printf("\n");
+                                                        printf("! Seu personagem não pode ser ladino e viver no meio tribal !\n");
+                                                        printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                        scanf("%d", &meioemquevive);
+                                                        continue;
+                                                }
+                                        } else {
+                                                printf("* Meio em que vive (1 - URBANO, 2 - RURAL, 3 - TRIBAL): ");
+                                                scanf("%d", &meioemquevive);
+                                        }
+
+
+                                        printf("* Porte (1 - GRANDE, 2 - MÉDIO, 3 - PEQUENO): ");
+                                        scanf("%d", &porte);
+
+                                        printf("* História Prévia: "); // !escanear a historia do personagem
+                                        scanf("%s", historia);
+                                        break;
+                        }
+
+                        case 2:
+                                //so deixa iniciar o jogo caso algum personagem ja tenha sido criado.
+                                if (existepersonagem == 1) {
+                                        opcao = 1;
+                                        printf("\n");
+                                        printf("* Você escolheu iniciar o jogo *\n");
+                                        return 0;
+                                } else {
+                                        printf("\n");
+                                        printf("! Você não pode iniciar o jogo sem ter criado o perso>
+                                        continue;
+                                }
+                        case 3:
+                                printf("\n");
+                                printf("* Você escolheu sair do jogo *\n");
+                                break;
+                        default:
+                                printf("\n");
+                                printf("! Opção não reconhecida, tente novamente !\n");
+                                break;
+
+                  }
+        }
+        return 0;
+}
