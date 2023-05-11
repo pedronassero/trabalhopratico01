@@ -234,7 +234,7 @@ int main() {
                                         return 0;
                                 } else {
                                         printf("\n");
-                                        printf("! Você não pode iniciar o jogo sem ter criado o perso>
+                                        printf("! Você não pode iniciar o jogo sem ter criado o personagem !\n");
                                         continue;
                                 }
                         case 3:
