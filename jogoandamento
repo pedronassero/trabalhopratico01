@@ -511,19 +511,19 @@ int main() {
                                         printf("* Você escolheu iniciar o jogo *\n"); //inicio do jogo
                                         printf("\n\n");
                                         int evento1, pegoumapa = 0;
-                                        sleep(7);
+                                        sleep(3);
                                         system("clear");
                                         //introducao
-                                        printf("* Era uma vez o Mundo Fantástico de Zenith. Um mundo de paisagens extravagantes e riquezas naturais à altura do paraíso.\n");
-                                        printf("* Em toda sua extensão, Zenith, conhecido também como o pináculo da esfera celete, é habitado por inúmeras criaturas sobrenaturais com características únicas, das florestas temperadas calmas e relaxantes do Sul às montanhas frias e congelantes do Norte.\n");
-                                        printf("* Contudo, o lugar ainda está distante de ser o melhor para se morar. Sua abundância de recursos atraiu guerras entre as tribos ali presentes, com objetivos de conquistar e dominar os territórios, levando caos e fome por onde passavam.\n");
-                                        printf("\n...\n");
+                                        printf("    * Era uma vez o Mundo Fantástico de Zenith. Um mundo de paisagens extravagantes e riquezas naturais à altura do paraíso.\n");
+                                        printf("    * Em toda sua extensão, Zenith, conhecido também como o pináculo da esfera celete, é habitado por inúmeras criaturas sobrenaturais com características únicas, das florestas temperadas calmas e relaxantes do Sul às montanhas frias e congelantes do Norte.\n");
+                                        printf("    * Contudo, o lugar ainda está distante de ser o melhor para se morar. Sua abundância de recursos atraiu guerras entre as tribos ali presentes, com objetivos de conquistar e dominar os territórios, levando caos e fome por onde passavam.\n");
+                                        printf("\n...\n\n");
                                         sleep(15);
-                                        printf("* %s emerge na costa da Praia Anã, extenuado após dias de viagem em alto-mar.\n", nome);
-                                        printf("* A praia dourada se estende diante de seus olhos, iluminada pelo sol radiante. As ondas suaves beijam a areia enquanto a brisa salgada acaricia seu rosto.\n");
-                                        printf("* A jornada até aqui foi árdua, mas finalmente chegou à essa terra maravilhosa.\n");
-                                        printf("* Agora cabe a você explorar os segredos e desafios dessa ilha e desvendar os mistérios que o aguardam além da praia...\n");
-                                        printf("\n...\n");
+                                        printf("    * %s emerge na costa da Praia Anã, extenuado após dias de viagem em alto-mar.\n", nome);
+                                        printf("    * A praia dourada se estende diante de seus olhos, iluminada pelo sol radiante. As ondas suaves beijam a areia enquanto a brisa salgada acaricia seu rosto.\n");
+                                        printf("    * A jornada até aqui foi árdua, mas finalmente chegou à essa terra maravilhosa.\n");
+                                        printf("    * Agora cabe a você explorar os segredos e desafios dessa ilha e desvendar os mistérios que o aguardam além da praia...\n");
+                                        printf("\n...\n\n");
                                         sleep(15);
                                         printf("* Quando menos se espera, o primeiro desafio se encontra à sua frente...\n\n"); //inicio do evento 1
                                         sleep(3);
@@ -595,14 +595,14 @@ int main() {
                                         printf("* Oh não! Parece que um bando de Trolls está atacando uma pequena tribo de elfos, o que você fará?\n");
                                         printf("* 1 - Lutar a favor dos Elfos e acabar com a invasão dos Trolls\n");
                                         printf("* 2 - Tentar convencer os Trolls a deixarem os elfos em paz\n");
-                                        printf("* 3 - Lutra a favor dos Trolls e dizimar os Elfos que moram nessa floresta\n");
+                                        printf("* 3 - Lutar a favor dos Trolls e dizimar os Elfos que moram nessa floresta\n");
                                         scanf("%d", &evento2);
                                         while (evento2 != 1 && evento2 != 2 && evento2 != 3) {
                                            system("clear");
                                            printf("! Opção não reconhecida, tente novamente !\n");
                                            printf("* 1 - Lutar a favor dos Elfos e acabar com a invasão dos Trolls\n");
                                            printf("* 2 - Tentar convencer os Trolls a deixarem os elfos em paz\n");
-                                           printf("* 3 - Lutra a favor dos Trolls e dizimar os Elfos que moram nessa floresta\n");
+                                           printf("* 3 - Lutar a favor dos Trolls e dizimar os Elfos que moram nessa floresta\n");
                                            scanf("%d", &evento2);
                                         }
                                         switch(evento2) {
@@ -630,9 +630,10 @@ int main() {
                                               }
                                               switch(fruta) { //comer fruta
                                               case 1:
+                                                                                            case 1:
                                                    printf("* Você escolheu comer a fruta...\n");
                                                    sleep(3);
-                                                   printf("* A fruta te recuperou 10 pontos de vida!\n");
+                                                   printf("* A fruta te deu 10 pontos de vida!\n");
                                                    vida += 10;
                                                    sleep(2);
                                                    printf("* Sua vida: %d\n", vida);
@@ -692,10 +693,11 @@ int main() {
                                               system("clear");
                                               if (alinhamento == 3) {
                                                 while (evento2 != 1 && evento2 != 2) {
+                                                   system("clear");
                                                    printf("! Você precisa seguir sua índole, você não pode simplesmente ter o alinhamento bom e escolher matar todos os elfos !\n");
                                                    printf("* 1 - Lutar a favor dos Elfos e acabar com a invasão dos Trolls\n");
                                                    printf("* 2 - Tentar convencer os Trolls a deixarem os elfos em paz\n");
-                                                   printf("* 3 - Lutra a favor dos Trolls e dizimar os Elfos que moram nessa floresta\n");
+                                                   printf("* 3 - Lutar a favor dos Trolls e dizimar os Elfos que moram nessa floresta\n");
                                                    scanf("%d", &evento2);
                                                 }
                                               } else {
@@ -721,6 +723,7 @@ int main() {
                                               printf("* Finalmente você deixa a Floresta Élfica, e novamente você segue sem rumo...\n");
                                           }
 
+                                          int evento3;
                                           sleep(7);
                                           system("clear");
                                           printf("* Você avista as motanhas logo à sua frente.\n");
@@ -891,4 +894,5 @@ int main() {
         }
         return 0;
 }
+
 
