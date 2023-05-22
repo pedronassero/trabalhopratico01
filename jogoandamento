@@ -728,7 +728,149 @@ int main() {
                                           printf("* Para chegar lá, você precisa atravassar uma ponte de madeira.\n");
                                           sleep(4);
                                           printf("* Oh não! Parece que a ponte está totalmente destruída. O que você fará?\n");
-
+                                          if (profissao == 3) {;
+                                            printf("* 1 - Procurar outro caminho pelas redondezas\n");
+                                            printf("* 2 - Montar um acampamento e esperar por ajuda\n");
+                                            printf("* 3 - Tentar pular o abismo com ajuda das cordas em volta da ponte\n");
+                                            scanf("%d", &evento3);
+                                            while (evento3 != 1 && evento3 != 2 && evento3 != 3) {
+                                              system("clear");
+                                              printf("! Opção não reconhecida, tente novamente !\n");
+                                              printf("* 1 - Procurar outro caminho pelas redondezas\n");
+                                              printf("* 2 - Montar um acampamento e esperar por ajuda\n");
+                                              printf("* 3 - Tentar pular o abismo com ajuda das cordas em volta da ponte\n");
+                                              scanf("%d", &evento3);
+                                            }
+                                            switch(evento3) {
+                                               case 1: //opcao que volta ao passo 4
+                                                  system("clear");
+                                                  printf("* Você escolheu procurar um outro caminho pelas redondezas.\n");
+                                                  sleep(3);
+                                                  printf("* Você anda por horas e não encontra outro caminho...\n");
+                                                  sleep(3);
+                                                  printf("* Oh não! Parece que você se perdeu! Você se encontra novamente na Floresta Élfica.\n");
+                                                  break;
+                                               case 2:
+                                                  system("clear");
+                                                  printf("* Você escolheu montar um acampamento e esperar por ajuda\n");
+                                                  sleep(3);
+                                                  if (evento2 == 3) {
+                                                    printf("* Como sua reputação entre os habitantes da ilha está baixa, ninguém veio te ajudar.\n");
+                                                    sleep(3);
+                                                    printf("* Em razão disso, você precisa se virar sozinho...\n");
+                                                    sleep(5);
+                                                    printf("* Você junta materiais que estavam aos arredores e conserta a ponte.\n");
+                                                    break;
+                                                  } else {
+                                                    printf("* Após algumas horas de espera, os Elfos vieram te ajudar.\n");
+                                                    sleep(3);
+                                                    printf("* Desse modo, vocês conseguem consertar a ponte com êxito!\n");
+                                                    break;
+                                                  }
+                                               case 3:
+                                                  system("clear"); //so ladinos tem essa opcao
+                                                  printf("* Você escolheu tentar pular o abismo com ajuda das cordas em volta da ponte.\n");
+                                                  sleep(3);
+                                                  printf("* Pelo motivo de Ladinos serem bastante furtivos, você consegue chegar ao outro lado da ponte com êxito!\n");
+                                                  break;
+                                            }
+                                          } else if (profissao == 2) {
+                                                printf("* 1 - Procurar outro caminho pelas redondezas\n");
+                                                printf("* 2 - Montar um acampamento e esperar por ajuda\n");
+                                                printf("* 3 - Usar magia para consertar a ponte\n");
+                                                scanf("%d", &evento3);
+                                                while (evento3 != 1 && evento3 != 2 && evento3 != 3) {
+                                                  system("clear");
+                                                  printf("! Opção não reconhecida, tente novamente !\n");
+                                                  printf("* 1 - Procurar outro caminho pelas redondezas\n");
+                                                  printf("* 2 - Montar um acampamento e esperar por ajuda\n");
+                                                  printf("* 3 - Usar magia para consertar a ponte\n");
+                                                  scanf("%d", &evento3);
+                                                }
+                                                switch(evento3) {
+                                                   case 1:
+                                                      system("clear"); //voltar ao passo 4
+                                                      printf("* Você escolheu procurar um outro caminho pelas redondezas.\n");
+                                                      sleep(3);
+                                                      printf("* Você anda por horas e não encontra outro caminho...\n");
+                                                      sleep(3);
+                                                      printf("* Oh não! Parece que você se perdeu! Você se encontra novamente na Floresta Élfica.\n");
+                                                      break;
+                                                   case 2:
+                                                      system("clear");
+                                                      printf("* Você escolheu montar um acampamento e esperar por ajuda\n");
+                                                      sleep(3);
+                                                      if (evento2 == 3) {
+                                                        printf("* Como sua reputação entre os habitantes da ilha está baixa, ninguém veio te ajudar.\n");
+                                                        sleep(3);
+                                                        printf("* Em razão disso, você precisa se virar sozinho...\n");
+                                                        sleep(5);
+                                                        printf("* Você junta materiais que estavam aos arredores e conserta a ponte.\n");
+                                                        break;
+                                                      } else {
+                                                        printf("* Após algumas horas de espera, os Elfos vieram te ajudar.\n");
+                                                        sleep(3);
+                                                        printf("* Desse modo, vocês conseguem consertar a ponte com êxito!\n");
+                                                        break;
+                                                      }
+                                                   case 3: //opcao so para magos
+                                                      system("clear");
+                                                      printf("* Você escolheu usar magia para consertar a ponte.\n");
+                                                      sleep(3);
+                                                      printf("* Como você é um belo mago, ao usar sua magia, os pedaços destruídos da ponte vão se encaixando novamente...\n");
+                                                      sleep(3);
+                                                      printf("* E assim, a ponte está perfeitamente consertada, bom trabalho!\n");
+                                                      break;
+                                                }
+                                         } else {
+                                             printf("* 1 - Procurar outro caminho pelas redondezas\n");
+                                             printf("* 2 - Montar um acampamento e esperar por ajuda\n");
+                                             printf("* 3 - Buscar materiais para consertar a ponte por si só\n");
+                                             scanf("%d", &evento3);
+                                             while (evento3 != 1 && evento3 != 2 && evento3 != 3) {
+                                               system("clear");
+                                               printf("! Opção não reconhecida, tente novamente !\n");
+                                               printf("* 1 - Procurar outro caminho pelas redondezas\n");
+                                               printf("* 2 - Montar um acampamento e esperar por ajuda\n");
+                                               printf("* 3 - Buscar materiais para consertar a ponte por si só\n");
+                                               scanf("%d", &evento3);
+                                             }
+                                            switch(evento3) {
+                                                   case 1: //opcao que volta ao passo 4
+                                                      system("clear");
+                                                      printf("* Você escolheu procurar um outro caminho pelas redondezas.\n");
+                                                      sleep(3);
+                                                      printf("* Você anda por horas e não encontra outro caminho...\n");
+                                                      sleep(3);
+                                                      printf("* Oh não! Parece que você se perdeu! Você se encontra novamente na Floresta Élfica.\n");
+                                                      break;
+                                                   case 2:
+                                                      system("clear");
+                                                      printf("* Você escolheu montar um acampamento e esperar por ajuda\n");
+                                                      sleep(3);
+                                                      if (evento2 == 3) {
+                                                        printf("* Como sua reputação entre os habitantes da ilha está baixa, ninguém veio te ajudar.\n");
+                                                        sleep(3);
+                                                        printf("* Em razão disso, você precisa se virar sozinho...\n");
+                                                        sleep(5);
+                                                        printf("* Você junta materiais que estavam aos arredores e conserta a ponte.\n");
+                                                        break;
+                                                      } else {
+                                                        printf("* Após algumas horas de espera, os Elfos vieram te ajudar.\n");
+                                                        sleep(3);
+                                                        printf("* Desse modo, vocês conseguem consertar a ponte com êxito!\n");
+                                                        break;
+                                                      }
+                                                   case 3:
+                                                      system("clear");
+                                                      printf("* Você escolheu buscar materiais para consertar a ponte por si só.\n");
+                                                      sleep(3);
+                                                      printf("* Após algumas horas de busca, você econtra todos os materiais necessários...\n");
+                                                      sleep(3);
+                                                      printf("* E assim, depois de mais algumas horas de trabalho, a ponte está consertada, bom trabalho!\n");
+                                                      break;
+                                                }
+                                         }
                                         return 0;
                                 } else {
                                         system("clear");
@@ -749,3 +891,4 @@ int main() {
         }
         return 0;
 }
+
